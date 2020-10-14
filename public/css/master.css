@@ -1,47 +1,24 @@
 /* -- Home -- */
 
-/* Main Section */
-.homeMainSection {
+/* Utility Classes */
+.cards {
   position: relative;
   text-align: center;
 }
-.homeMainSection > img {
+.cards > img {
   width: 100%;
   filter: brightness(30%);
 }
-.homeMainSection > div {
+.cards > div {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   color: white;
 }
-.homeMainSection h1 {
+.cards h1 {
   font-size: 6vw;
 }
-.homeMainSection p {
-  font-size: 4vw;
-}
-
-/* Games Section */
-.homeGamesSection {
-  position: relative;
-  text-align: center;
-}
-.homeGamesSection > img {
-  width: 100%;
-  filter: brightness(30%);
-}
-.homeGamesSection > div {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
-}
-.homeGamesSection h1 {
-  font-size: 6vw;
-}
-.homeGamesSection p {
+.cards p {
   font-size: 4vw;
 }
