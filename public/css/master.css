@@ -3,6 +3,9 @@
   cursor: pointer;
 }
 
+/* Wishes */
+
+
 /* Utility Classes */
 .cards {
   position: relative;
@@ -33,4 +36,11 @@
 }
 .cards p {
   font-size: 4vw;
+}
+
+.headerSection {
+  background-color: #008080;
+}
+.headerSection p{
+  color: white;
 }
