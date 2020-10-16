@@ -4,7 +4,9 @@
 }
 
 /* Wishes */
-
+.wishCardBox {
+  margin-bottom: 15px;
+}
 
 /* Utility Classes */
 .cards {
