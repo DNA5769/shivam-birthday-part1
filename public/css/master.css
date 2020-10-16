@@ -19,6 +19,10 @@
   transform: translate(-50%, -50%);
   color: white;
 }
+.cards a {
+  text-decoration: none;
+  color: inherit;
+}
 .cards h1 {
   font-size: 6vw;
   cursor: pointer;
