@@ -7,6 +7,7 @@ app.use(express.static('public'));
 app.set('view engine', 'ejs');
 
 let wishes = require(path.join(__dirname, 'src', 'w.json'));
+let feedbacks = require(path.join(__dirname, 'src', 'm.json'));
 
 app.get('/', (req, res) => {
   res.sendFile('index.html');
@@ -17,7 +18,7 @@ app.get('/wishes', (req, res) => {
 });
 
 app.get('/music', (req, res) => {
-  res.render('m.ejs');
+  res.render('m.ejs', {'feedbacks': feedbacks});
 });
 
 const PORT = process.env.PORT || 3000;

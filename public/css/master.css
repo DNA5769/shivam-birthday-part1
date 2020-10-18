@@ -12,6 +12,16 @@
 .headerMusicPara {
   font-size: 1.5rem;
 }
+.feedbackCardBox {
+  margin-bottom: 15px;
+}
+.feedbackCardBox > div {
+  padding: 10px;
+  padding-bottom: 3px;
+}
+.feedbackCardBox p {
+  margin-top: 3px;
+}
 
 /* Utility Classes */
 .cards {
