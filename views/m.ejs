@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Shivam's Birthday | Wishes</title>
+    <title>Shivam's Birthday | Music</title>
     <link rel="icon" href="/images/favicon.png">
 
     <!-- jQuery -->
@@ -17,8 +17,6 @@
     <link rel="stylesheet" href="/css/master.css">
   </head>
   <body>
-    <div id="wishes" style="display:none;"><%= JSON.stringify(wishes) %></div>
-
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <a class="navbar-brand" href="/">
@@ -34,8 +32,8 @@
           <li class="nav-item">
             <a class="nav-link" href="/">Home</a>
           </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="/wishes">🥳Wishes <span class="sr-only">(current)</span></a>
+          <li class="nav-item">
+            <a class="nav-link" href="/wishes">🥳Wishes</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -48,8 +46,8 @@
               <a class="dropdown-item" href="#">Something else here</a>
             </div>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/music">🎵Music</a>
+          <li class="nav-item active">
+            <a class="nav-link" href="/music">🎵Music <span class="sr-only">(current)</span></a>
           </li>
         </ul>
       </div>
@@ -58,55 +56,9 @@
     <!-- Header -->
     <section class="headerSection jumbotron text-center">
       <div class="container">
-        <h1 class="jumbotron-heading">Wishes</h1>
+        <h1 class="jumbotron-heading">Music</h1>
         <p class="lead">You have made a lot of people's lives better either by your joyful personality or by you being the helpful and caring person you are. Here's a handful of those people wishing the best for you. Hope reading these makes you smile, because your the reason for many people's smile everyday <s>except when you sing, fam shut yo...</s> &lt;3<br><em>*ooh also, some may not have their real names, so try and guess who is who ;)</em></p>
       </div>
     </section>
-
-    <!-- Wishes -->
-    <div class="container">
-      <div class="row">
-        <% wishes.forEach(wish => { %>
-          <div class="col-md-6 wishCardBox">
-            <div class="card mb-6 box-shadow">
-              <img class="card-img-top" src="<%= wish.image %>" alt="Card image cap">
-              <div class="card-body">
-                <p class="h3"><%= wish.name %></p>
-                <p id="wishesText<%= wish.name %>" class="card-text"><%=wish.wish.length > 110 ? wish.wish.slice(0,110) + ' ...' : wish.wish %></p>
-                <% if (wish.wish.length > 110) {%>
-                  <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                      <button id="wishesView<%= wish.name %>" type="button" name="<%= wish.name %>" class="btn btn-sm btn-outline-secondary wishesView">View More</button>
-                    </div>
-                  </div>
-                <% } %>
-              </div>
-            </div>
-          </div>
-        <% }); %>
-      </div>
-    </div>
-
-    <script type="text/javascript">
-      $('.wishesView').click(event => {
-        let { name } = event.target;
-        if ($('#wishesView'+name).text() === 'View More')
-        {
-          let wishes = JSON.parse(document.getElementById('wishes').textContent);
-          wishes.forEach(wish => {
-            if (wish.name === name)
-            {
-              $('#wishesText'+name).text(wish.wish);
-            }
-          });
-          $('#wishesView'+name).text('Close');
-        }
-        else
-        {
-          $('#wishesText'+name).text($('#wishesText'+name).text().slice(0,110) + ' ...');
-          $('#wishesView'+name).text('View More');
-        }
-      });
-    </script>
   </body>
 </html>

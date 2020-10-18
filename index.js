@@ -16,6 +16,10 @@ app.get('/wishes', (req, res) => {
   res.render('w.ejs', {'wishes': wishes});
 });
 
+app.get('/music', (req, res) => {
+  res.render('m.ejs');
+});
+
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`[STARTING]: Server started on port ${PORT}`);
