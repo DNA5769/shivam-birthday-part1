@@ -92,22 +92,25 @@
     </div>
 
     <script type="text/javascript">
+      let wishes = JSON.parse(document.getElementById('wishes').textContent);
+      wishes.forEach(wish => {
+        $('#wishesText'+wish.name).html(wish.wish.length > 110? wish.wish.slice(0,110) + ' ...': wish.wish);
+      });
       $('.wishesView').click(event => {
         let { name } = event.target;
         if ($('#wishesView'+name).text() === 'View More')
         {
-          let wishes = JSON.parse(document.getElementById('wishes').textContent);
           wishes.forEach(wish => {
             if (wish.name === name)
             {
-              $('#wishesText'+name).text(wish.wish);
+              $('#wishesText'+name).html(wish.wish);
             }
           });
           $('#wishesView'+name).text('Close');
         }
         else
         {
-          $('#wishesText'+name).text($('#wishesText'+name).text().slice(0,110) + ' ...');
+          $('#wishesText'+name).html($('#wishesText'+name).text().slice(0,110) + ' ...');
           $('#wishesView'+name).text('View More');
         }
       });
