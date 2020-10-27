@@ -23,6 +23,11 @@
   margin-top: 3px;
 }
 
+/* Game */
+.downloadbtn {
+  width: 150px;
+}
+
 /* Utility Classes */
 .cards {
   position: relative;

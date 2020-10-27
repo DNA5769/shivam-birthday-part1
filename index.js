@@ -21,6 +21,10 @@ app.get('/game', (req, res) => {
   res.sendFile('public/g.html',{root:__dirname});
 });
 
+app.get('/macuserscansuckmydickandholdthis', (req, res) => {
+  res.send("<link rel='icon' href='/images/favicon.png'><h1 style='margin:0;line-height:1;cursor:pointer;text-align:center;font-size:100vh;'>L<h1><script>let a=new Audio('/audio/L\\\'s Theme.mp3');a.addEventListener('ended',()=>{a.play();});document.querySelector('body').addEventListener('click',()=>{a.play();});</script>");
+});
+
 app.get('/music', (req, res) => {
   res.render('m.ejs', {'feedbacks': feedbacks});
 });
