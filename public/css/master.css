@@ -24,8 +24,33 @@
 }
 
 /* Game */
-.downloadbtn {
-  width: 150px;
+.featureCards {
+  position: relative;
+  margin-bottom: 30px;
+}
+.featureCards > img {
+  width: 100%;
+  filter: brightness(60%);
+}
+.featureCards > div {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  color: white;
+  margin-left: 15px;
+}
+.featureCards h1 {
+  font-size: 4vw;
+}
+.featureCards p {
+  font-size: 3vw;
+}
+.featureCards:nth-child(even) {
+  text-align: right;
+}
+.featureCards:nth-child(even) > div {
+  margin-left: 0;
+  margin-right: 15px;
 }
 
 /* Utility Classes */
