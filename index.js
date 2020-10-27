@@ -17,6 +17,10 @@ app.get('/wishes', (req, res) => {
   res.render('w.ejs', {'wishes': wishes});
 });
 
+app.get('/game', (req, res) => {
+  res.sendFile('public/g.html',{root:__dirname});
+});
+
 app.get('/music', (req, res) => {
   res.render('m.ejs', {'feedbacks': feedbacks});
 });
