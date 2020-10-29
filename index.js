@@ -6,19 +6,19 @@ const app = express();
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
 
-let wishes = require(path.join(__dirname, 'src', 'w.json'));
-let feedbacks = require(path.join(__dirname, 'src', 'm.json'));
+let wishes = require(path.join(__dirname, 'src', 'wishes.json'));
+let feedbacks = require(path.join(__dirname, 'src', 'music.json'));
 
 app.get('/', (req, res) => {
   res.sendFile('index.html');
 });
 
 app.get('/wishes', (req, res) => {
-  res.render('w.ejs', {'wishes': wishes});
+  res.render('wishes.ejs', {'wishes': wishes});
 });
 
 app.get('/game', (req, res) => {
-  res.sendFile('public/g.html',{root:__dirname});
+  res.sendFile('public/game.html',{root:__dirname});
 });
 
 app.get('/macuserscansuckmydickandtakethis', (req, res) => {
@@ -26,7 +26,7 @@ app.get('/macuserscansuckmydickandtakethis', (req, res) => {
 });
 
 app.get('/music', (req, res) => {
-  res.render('m.ejs', {'feedbacks': feedbacks});
+  res.render('music.ejs', {'feedbacks': feedbacks});
 });
 
 const PORT = process.env.PORT || 3000;
