@@ -67,7 +67,7 @@
               <img class="card-img-top" src="<%= wish.image %>" alt="Card image cap">
               <div class="card-body">
                 <p class="h3"><%= wish.name %></p>
-                <p id="wishesText<%= wish.actualName %>" class="card-text"><%=wish.wish.length > 110 ? wish.wish.slice(0,110) + ' ...' : wish.wish %></p>
+                <p id="wishesText<%= wish.actualName %>" class="card-text"><%-wish.wish.length > 110 ? wish.wish.slice(0,110) + ' ...' : wish.wish %></p>
                 <% if (wish.wish.length > 110) {%>
                   <div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
@@ -84,9 +84,6 @@
 
     <script type="text/javascript">
       let wishes = JSON.parse(document.getElementById('wishes').textContent);
-      wishes.forEach(wish => {
-        $('#wishesText'+wish.actualName).html(wish.wish.length > 110? wish.wish.slice(0,110) + ' ...': wish.wish);
-      });
       $('.wishesView').click(event => {
         let { name } = event.target;
         if ($('#wishesView'+name).text() === 'View More')
